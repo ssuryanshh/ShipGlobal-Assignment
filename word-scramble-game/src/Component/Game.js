@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./Game.css"; // Add any CSS styling here
+import "./Game.css"; 
 
 const Game = () => {
-  // List of words and their scrambled versions
+  
   const words = [
     { word: "javascript", scrambled: "jvsairctp", hint: "A popular programming language for web development." },
     { word: "html", scrambled: "htlm", hint: "The standard markup language for creating web pages." },
@@ -13,18 +13,15 @@ const Game = () => {
   ];
   
 
-  // State variables for the current word, user input, feedback, and attempts
   const [currentWord, setCurrentWord] = useState({});
   const [userInput, setUserInput] = useState("");
   const [feedback, setFeedback] = useState("");
   const [attempts, setAttempts] = useState(0);
 
-  // Function to get a random word from the list
   const getRandomWord = () => {
     return words[Math.floor(Math.random() * words.length)];
   };
 
-  // Function to start or restart the game
   const startGame = () => {
     const newWord = getRandomWord();
     setCurrentWord(newWord);
@@ -33,7 +30,6 @@ const Game = () => {
     setAttempts(0);
   };
 
-  // Function to check the user's answer
   const checkAnswer = () => {
     setAttempts(attempts + 1);
     if (userInput.trim().toLowerCase() === currentWord.word) {
@@ -43,7 +39,6 @@ const Game = () => {
     }
   };
 
-  // Effect to start the game on component mount
   useEffect(() => {
     startGame();
   }, []);

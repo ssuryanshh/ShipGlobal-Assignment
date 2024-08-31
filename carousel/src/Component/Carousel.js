@@ -23,7 +23,7 @@ const Carousel = () => {
       alt: "Image 4",
     },
     {
-      src: "https://images.unsplash.com/photo-1613604489862-8a532558244a",
+      src: "https://images13604489862-8a532558244a",
       alt: "Image 5",
     },
   ];
